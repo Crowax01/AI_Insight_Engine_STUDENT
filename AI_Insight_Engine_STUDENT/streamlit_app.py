@@ -1,4 +1,3 @@
-# TODO: Gradio Blocks app
 import io
 import re
 import random
@@ -8,7 +7,6 @@ import pandas as pd
 import plotly.express as px
 import gradio as gr
 
-from google.colab import files
 from sentence_transformers import SentenceTransformer
 from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA
@@ -20,11 +18,8 @@ SEED = 42
 random.seed(SEED)
 np.random.seed(SEED)
 
-MODEL_NAME = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
-model = SentenceTransformer(MODEL_NAME)
-
 # =====================================================================
-# 1. 이전 단계에서 작성한 핵심 분석 함수들
+# 1. 핵심 분석 함수들
 # =====================================================================
 def read_and_clean_csv(file_path):
     encodings = ['utf-8-sig', 'utf-8', 'cp949']
@@ -225,6 +220,6 @@ with gr.Blocks(theme=gr.themes.Soft()) as app:
         outputs=[search_output]
     )
 
-# 앱 실행
+# 앱 실행 (배포 환경을 위해 파라미터 제외)
 if __name__ == "__main__":
-    app.launch(debug=True)
+    app.launch()
