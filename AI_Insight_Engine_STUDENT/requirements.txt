@@ -1,5 +1,5 @@
 streamlit>=1.50,<2
-sentence-transformer>=3,<6
+sentence-transformers>=3,<6
 scikit-learn>=1.4,<2
 pandas>=2,<3
 numpy>=1.26,<3
