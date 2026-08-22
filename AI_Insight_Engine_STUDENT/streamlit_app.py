@@ -222,4 +222,4 @@ with gr.Blocks(theme=gr.themes.Soft()) as app:
 
 # 앱 실행 (배포 환경을 위해 파라미터 제외)
 if __name__ == "__main__":
-    app.launch()
+    app.launch(share=True)
